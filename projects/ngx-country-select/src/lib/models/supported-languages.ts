@@ -1,0 +1,17 @@
+export type NgxCountrySelectSupportedLanguages =
+  | "br"
+  | "be"
+  | "ca"
+  | "eu"
+  | "gl"
+  | "ru"
+  | "uk"
+  | "de"
+  | "en"
+  | "es"
+  | "fr"
+  | "hr"
+  | "hu"
+  | "it"
+  | "nl"
+  | "pt";

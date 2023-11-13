@@ -1,7 +1,7 @@
 export interface Country {
-  name?: string;
+  name: string;
   alpha2Code: string;
-  alpha3Code?: string;
-  numericCode?: string;
-  callingCode?: string;
+  alpha3Code: string;
+  numericCode: string | null;
+  callingCode: string;
 }
