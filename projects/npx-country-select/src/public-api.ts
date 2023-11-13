@@ -1,6 +1,6 @@
 /*
- * Public API Surface of npx-country-select
+ * Public API Surface of ngx-country-select
  */
 
-export * from './lib/npx-country-select.service';
-export * from './lib/npx-country-select.component';
+export * from './lib/ngx-country-select.service';
+export * from './lib/ngx-country-select.component';

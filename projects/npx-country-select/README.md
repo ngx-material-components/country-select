@@ -1,23 +1,23 @@
-# NpxCountrySelect
+# NgxCountrySelect
 
 This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.0.
 
 ## Code scaffolding
 
-Run `ng generate component component-name --project npx-country-select` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project npx-country-select`.
-> Note: Don't forget to add `--project npx-country-select` or else it will be added to the default project in your `angular.json` file. 
+Run `ng generate component component-name --project ngx-country-select` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ngx-country-select`.
+> Note: Don't forget to add `--project ngx-country-select` or else it will be added to the default project in your `angular.json` file. 
 
 ## Build
 
-Run `ng build npx-country-select` to build the project. The build artifacts will be stored in the `dist/` directory.
+Run `ng build ngx-country-select` to build the project. The build artifacts will be stored in the `dist/` directory.
 
 ## Publishing
 
-After building your library with `ng build npx-country-select`, go to the dist folder `cd dist/npx-country-select` and run `npm publish`.
+After building your library with `ng build ngx-country-select`, go to the dist folder `cd dist/ngx-country-select` and run `npm publish`.
 
 ## Running unit tests
 
-Run `ng test npx-country-select` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Run `ng test ngx-country-select` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
 ## Further help
 

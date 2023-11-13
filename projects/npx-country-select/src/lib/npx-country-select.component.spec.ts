@@ -1,18 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NpxCountrySelectComponent } from './npx-country-select.component';
+import { NgxCountrySelectComponent } from './ngx-country-select.component';
 
-describe('NpxCountrySelectComponent', () => {
-  let component: NpxCountrySelectComponent;
-  let fixture: ComponentFixture<NpxCountrySelectComponent>;
+describe('NgxCountrySelectComponent', () => {
+  let component: NgxCountrySelectComponent;
+  let fixture: ComponentFixture<NgxCountrySelectComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [NpxCountrySelectComponent]
-    })
-    .compileComponents();
-    
-    fixture = TestBed.createComponent(NpxCountrySelectComponent);
+      imports: [NgxCountrySelectComponent],
+    }).compileComponents();
+
+    fixture = TestBed.createComponent(NgxCountrySelectComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

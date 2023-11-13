@@ -16,18 +16,13 @@
     "experimentalDecorators": true,
     "moduleResolution": "node",
     "paths": {
-      "npx-country-select": [
-        "./dist/npx-country-select"
-      ]
+      "ngx-country-select": ["./dist/ngx-country-select"]
     },
     "importHelpers": true,
     "target": "ES2022",
     "module": "ES2022",
     "useDefineForClassFields": false,
-    "lib": [
-      "ES2022",
-      "dom"
-    ]
+    "lib": ["ES2022", "dom"]
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

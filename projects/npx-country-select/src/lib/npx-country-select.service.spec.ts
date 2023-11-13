@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { NpxCountrySelectService } from './npx-country-select.service';
+import { NgxCountrySelectService } from './ngx-country-select.service';
 
-describe('NpxCountrySelectService', () => {
-  let service: NpxCountrySelectService;
+describe('NgxCountrySelectService', () => {
+  let service: NgxCountrySelectService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(NpxCountrySelectService);
+    service = TestBed.inject(NgxCountrySelectService);
   });
 
   it('should be created', () => {

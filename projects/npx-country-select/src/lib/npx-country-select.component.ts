@@ -2,16 +2,10 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'lib-npx-country-select',
+  selector: 'lib-ngx-country-select',
   standalone: true,
   imports: [CommonModule],
-  template: `
-    <p>
-      npx-country-select works!
-    </p>
-  `,
-  styles: ``
+  template: ` <p>ngx-country-select works!</p> `,
+  styles: ``,
 })
-export class NpxCountrySelectComponent {
-
-}
+export class NgxCountrySelectComponent {}
