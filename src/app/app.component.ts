@@ -1,15 +1,14 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
-import { NgxCountrySelectModule } from "
+import {NgxCountrySelectComponent} from "../../projects/ngx-country-select/src/lib/ngx-country-select.component";
+
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet],
+  imports: [CommonModule, NgxCountrySelectComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'country-select';
 }

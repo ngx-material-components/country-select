@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'lib-ngx-country-select',
+  selector: 'ngx-country-select',
   standalone: true,
   imports: [CommonModule],
   template: `
