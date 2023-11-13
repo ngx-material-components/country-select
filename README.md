@@ -1,27 +1,21 @@
-# CountrySelect
+# NgxCountrySelect
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.0.
+Angular Material component that allow users to select a country or nationality with an autocomplete feature
 
-## Development server
+[![license](https://img.shields.io/github/license/angular-material-extensions/select-country.svg?style=flat-square)](https://github.com/angular-material-extensions/select-country/blob/master/LICENSE)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Table of Contents
+- [Demo](#demo)
+- [Components](#components)
+- [Dependencies](#dependencies)
+- [Installation](#installation)
+- [API](#api)
+- [Usage](#usage)
+- [Run Demo App Locally](#run-demo-app-locally)
+- [Other Angular Libraries](#other-angular-libraries)
+- [Support](#support)
+- [License](#license)
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## License
+Copyright (c) 2020-2023 [antalmate12](https://github.com/antalmate12). Licensed under the MIT License (MIT)
