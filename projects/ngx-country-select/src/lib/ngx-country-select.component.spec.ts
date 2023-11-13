@@ -8,9 +8,10 @@ describe('NgxCountrySelectComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [NgxCountrySelectComponent],
-    }).compileComponents();
-
+      imports: [NgxCountrySelectComponent]
+    })
+    .compileComponents();
+    
     fixture = TestBed.createComponent(NgxCountrySelectComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

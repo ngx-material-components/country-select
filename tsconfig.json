@@ -16,7 +16,10 @@
     "experimentalDecorators": true,
     "moduleResolution": "node",
     "paths": {
-      "ngx-country-select": ["./dist/ngx-country-select"]
+      "ngx-country-select": [
+        "./dist/ngx-country-select",
+        "./dist/ngx-country-select"
+      ]
     },
     "importHelpers": true,
     "target": "ES2022",

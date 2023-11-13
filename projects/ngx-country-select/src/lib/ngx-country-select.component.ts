@@ -5,7 +5,13 @@ import { CommonModule } from '@angular/common';
   selector: 'lib-ngx-country-select',
   standalone: true,
   imports: [CommonModule],
-  template: ` <p>ngx-country-select works!</p> `,
-  styles: ``,
+  template: `
+    <p>
+      ngx-country-select works!
+    </p>
+  `,
+  styles: ``
 })
-export class NgxCountrySelectComponent {}
+export class NgxCountrySelectComponent {
+
+}
