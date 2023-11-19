@@ -7,9 +7,9 @@ export * from "./fr";
 export * from "./hr";
 export * from "./hu";
 export * from "./it";
-export * from "./gl"; //Galician
-export * from "./ca"; //Catalan
-export * from "./eu"; //Basque
+export * from "./gl";
+export * from "./ca";
+export * from "./eu";
 export * from "./nl";
 export * from "./pt";
 export * from "./ru";

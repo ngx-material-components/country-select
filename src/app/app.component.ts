@@ -1,19 +1,11 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {NgxCountrySelectComponent} from "../../projects/ngx-country-select/src/lib/ngx-country-select.component";
-import {NgxCountrySelectLangToken} from "../../projects/ngx-country-select/src/lib/tokens";
-
+import {NgxCountrySelectModule} from "../../projects/ngx-country-select/src/lib/ngx-country-select.module";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, NgxCountrySelectComponent],
-  providers: [
-    {
-      provide: NgxCountrySelectLangToken,
-      useValue: "en",
-    }
-  ],
+  imports: [CommonModule, NgxCountrySelectModule],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })

@@ -12,23 +12,19 @@ import {
   SimpleChanges,
   SkipSelf
 } from '@angular/core';
-import {CommonModule} from '@angular/common';
-import {MatInputModule} from "@angular/material/input";
-import {MatFormFieldModule} from "@angular/material/form-field";
 import {ControlContainer, ControlValueAccessor, FormControl, Validators} from "@angular/forms";
 import {NgxCountrySelectSupportedLanguages} from "./models/supported-languages";
-import {NgxCountrySelectLangToken} from "./tokens";
+import {NgxCountrySelectDefaultFormFieldAppearanceToken, NgxCountrySelectLangToken} from "./tokens";
 import {Country} from "./models/country";
+import {MatFormFieldAppearance} from "@angular/material/form-field";
 
 @Component({
   selector: 'ngx-country-select',
-  standalone: true,
-  imports: [CommonModule, MatInputModule, MatFormFieldModule],
   templateUrl: './ngx-country-select.component.html',
   styles: ``
 })
 export class NgxCountrySelectComponent implements OnInit, OnChanges, ControlValueAccessor {
-  @Input() appearance: "fill" | "outline" = "outline";
+  @Input() appearance?: MatFormFieldAppearance;
   @Input({required: true}) label!: string;
   @Input() placeHolder = "Select country";
   @Input() required: boolean = false;
@@ -40,27 +36,14 @@ export class NgxCountrySelectComponent implements OnInit, OnChanges, ControlValu
     this.required ? [Validators.required] : []
   );
 
-  static forRoot(
-    i18n: NgxCountrySelectSupportedLanguages
-  ): ModuleWithProviders<NgxCountrySelectComponent> {
-    return {
-      ngModule: NgxCountrySelectComponent,
-      providers: [
-        {
-          provide: NgxCountrySelectLangToken,
-          useValue: i18n,
-        },
-      ],
-    };
-  }
-
   constructor(
     @Inject(forwardRef(() => NgxCountrySelectLangToken)) public i18n: string,
-    @Optional()
-    @Host()
-    @SkipSelf()
-    private controlContainer: ControlContainer,
-    private cdRef: ChangeDetectorRef
+    @Inject(forwardRef(() => NgxCountrySelectDefaultFormFieldAppearanceToken)) public appearanceToken?: MatFormFieldAppearance,
+    // @Optional()
+    // @Host()
+    // @SkipSelf()
+    // private controlContainer: ControlContainer,
+    // private cdRef: ChangeDetectorRef
   ) {
   }
 
