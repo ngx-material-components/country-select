@@ -4,6 +4,9 @@ Angular Material component that allow users to select a country or nationality w
 
 [![license](https://img.shields.io/github/license/angular-material-extensions/select-country.svg?style=flat-square)](https://github.com/angular-material-extensions/select-country/blob/master/LICENSE)
 
+[![GitHub issues](https://img.shields.io/github/issues/antalmate12/ngx-country-select.svg?style=flat-square)](
+
+
 ## Table of Contents
 - [Demo](#demo)
 - [Components](#components)
