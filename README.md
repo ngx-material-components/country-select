@@ -2,9 +2,9 @@
 
 Angular Material component that allow users to select a country or nationality with an autocomplete feature
 
-[![license](https://img.shields.io/github/license/angular-material-extensions/select-country.svg?style=flat-square)](https://github.com/angular-material-extensions/select-country/blob/master/LICENSE)
+[![license](https://img.shields.io/github/license/ngx-material-components/country-select.svg?style=flat-square)](https://github.com/ngx-material-components/country-select/blob/master/LICENSE)
 
-[![GitHub issues](https://img.shields.io/github/issues/antalmate12/ngx-country-select.svg?style=flat-square)](
+![GitHub issues](https://img.shields.io/github/issues/ngx-material-components/country-select.svg?style=flat-square)
 
 
 ## Table of Contents
