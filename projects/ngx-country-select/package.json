@@ -2,12 +2,12 @@
   "name": "ngx-country-select",
   "version": "0.0.1",
   "peerDependencies": {
-    "@angular/common": "^17.x",
-    "@angular/core": "^17.x",
-    "@angular/forms": "^17.x",
-    "@angular/platform-browser": "^17.x",
-    "@angular/cdk": "~17.x",
-    "@angular/material": "~17.x",
+    "@angular/common": "^17.1.x",
+    "@angular/core": "^17.1.x",
+    "@angular/forms": "^17.1.x",
+    "@angular/platform-browser": "^17.1.x",
+    "@angular/cdk": "^17.1.x",
+    "@angular/material": "^17.1.x",
     "rxjs": "^7.x"
   },
   "dependencies": {

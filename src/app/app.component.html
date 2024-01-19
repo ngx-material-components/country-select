@@ -1,5 +1,58 @@
-<mat-toolbar color="primary">
-  NgxCountrySelect Demo
-</mat-toolbar>
+<mat-toolbar color="primary"> NgxCountrySelect Demo </mat-toolbar>
 
-<ngx-country-select [label]="'Országok'" />
+<main>
+  <section>
+    <ngx-country-select
+      [appearance]="optionsForm.controls.appearance.value"
+      [language]="optionsForm.controls.language.value"
+      [label]="'Select a Country'"
+    />
+  </section>
+
+  <section>
+    <h2>Options</h2>
+
+    <form [formGroup]="optionsForm">
+      <mat-form-field>
+        <mat-label>Appearance</mat-label>
+        <mat-select formControlName="appearance">
+          <mat-option value="outline">Outline</mat-option>
+          <mat-option value="fill">Fill</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Label</mat-label>
+        <input aria-label="Label" matInput formControlName="label" />
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Placeholder</mat-label>
+        <input
+          aria-label="Placeholder"
+          matInput
+          formControlName="placeHolder"
+        />
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Language</mat-label>
+        <mat-select formControlName="language">
+          @for (lang of supportedLanguages; track lang.code) {
+          <mat-option [value]="lang.code">
+            {{ lang.code }}
+          </mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+
+      <mat-checkbox formControlName="required" arla-label="Required">
+        Required
+      </mat-checkbox>
+
+      <mat-checkbox formControlName="disabled" arla-label="Disabled">
+        Disabled
+      </mat-checkbox>
+    </form>
+  </section>
+</main>

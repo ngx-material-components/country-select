@@ -1,8 +1,21 @@
-<mat-form-field [appearance]="appearance ?? appearanceToken ?? 'outline'">
-  <mat-label>{{label}}</mat-label>
-  <input [required]="required" [disabled]="disabled" type="text" matInput>
+<mat-form-field [appearance]="appearance() ?? appearanceToken ?? 'outline'">
+  <mat-label>{{ label() }}</mat-label>
+  <input
+    autocomplete="country"
+    aria-label="Select a Country"
+    [required]="required()"
+    [disabled]="disabled()"
+    type="text"
+    matInput
+  />
 </mat-form-field>
 
-<pre>
-  {{countries | json}}
-</pre>
+<details>
+  <summary>Country list</summary>
+  <div>
+    <pre>
+  {{ countries | json }}
+</pre
+    >
+  </div>
+</details>
