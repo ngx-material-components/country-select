@@ -1,12 +1,23 @@
-<mat-toolbar color="primary"> NgxCountrySelect Demo </mat-toolbar>
+<mat-toolbar color="primary"> NgxCountrySelect Demo</mat-toolbar>
 
 <main>
   <section>
-    <ngx-country-select
-      [appearance]="optionsForm.controls.appearance.value"
-      [language]="optionsForm.controls.language.value"
-      [label]="'Select a Country'"
-    />
+
+    <div class="mockup-browser border bg-base-200">
+      <div class="mockup-browser-toolbar">
+        <div class="input !bg-base-300">https://your-site.com</div>
+      </div>
+      <div class="flex justify-center px-4 py-16 bg-base-100">
+        <ngx-country-select
+          [color]="optionsForm.controls.color.value"
+          [appearance]="optionsForm.controls.appearance.value"
+          [language]="optionsForm.controls.language.value"
+          [label]="'Select a Country'"
+          [required]="optionsForm.controls.required.value"
+          [disabled]="optionsForm.controls.disabled.value"
+        />
+      </div>
+    </div>
   </section>
 
   <section>
@@ -22,8 +33,17 @@
       </mat-form-field>
 
       <mat-form-field>
+        <mat-label>Color</mat-label>
+        <mat-select formControlName="color">
+          <mat-option value="primary">Primary</mat-option>
+          <mat-option value="accent">Accent</mat-option>
+          <mat-option value="warn">Warn</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field>
         <mat-label>Label</mat-label>
-        <input aria-label="Label" matInput formControlName="label" />
+        <input aria-label="Label" matInput formControlName="label"/>
       </mat-form-field>
 
       <mat-form-field>
@@ -39,18 +59,18 @@
         <mat-label>Language</mat-label>
         <mat-select formControlName="language">
           @for (lang of supportedLanguages; track lang.code) {
-          <mat-option [value]="lang.code">
-            {{ lang.code }}
-          </mat-option>
+            <mat-option [value]="lang.code">
+              {{ lang.code }}
+            </mat-option>
           }
         </mat-select>
       </mat-form-field>
 
-      <mat-checkbox formControlName="required" arla-label="Required">
+      <mat-checkbox formControlName="required" aria-label="Required">
         Required
       </mat-checkbox>
 
-      <mat-checkbox formControlName="disabled" arla-label="Disabled">
+      <mat-checkbox formControlName="disabled" aria-label="Disabled">
         Disabled
       </mat-checkbox>
     </form>

@@ -10,6 +10,7 @@ import {
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import {ThemePalette} from "@angular/material/core";
 
 @Component({
   selector: 'app-root',
@@ -30,6 +31,9 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 export class AppComponent {
   optionsForm = new FormGroup({
     appearance: new FormControl<MatFormFieldAppearance>('fill', {
+      nonNullable: true,
+    }),
+    color: new FormControl<ThemePalette>('primary', {
       nonNullable: true,
     }),
     label: new FormControl<string>('Select a Country', {

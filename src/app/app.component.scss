@@ -1,33 +1,14 @@
 main {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  height: calc(100vh - 64px);
-
-  @media (max-width: 599px) {
-    height: calc(100vh - 56px);
-  }
-
-  @media (max-width: 700px) {
-    display: grid;
-    grid-template-columns: 1fr;
-  }
-
   section {
     padding: 1rem;
-
-    overflow-y: auto;
   }
 
-  section:first-of-type {
+  form {
     display: grid;
-    place-items: center;
   }
+}
 
-  section:last-of-type {
-    background-color: #fdfdfd;
-
-    form {
-      display: grid;
-    }
-  }
+// Tailwindcss conflicts with Angular Material
+:host ::ng-deep .mdc-notched-outline__notch {
+  border-right: none !important;
 }

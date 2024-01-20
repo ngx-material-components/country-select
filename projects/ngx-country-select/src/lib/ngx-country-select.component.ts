@@ -1,17 +1,11 @@
 import {
-  ChangeDetectorRef,
   Component,
   forwardRef,
-  Host,
   Inject,
   input,
-  Input,
-  ModuleWithProviders,
   OnChanges,
   OnInit,
-  Optional,
   SimpleChanges,
-  SkipSelf,
   effect,
 } from '@angular/core';
 import {
@@ -20,18 +14,20 @@ import {
   FormControl,
   Validators,
 } from '@angular/forms';
-import { NgxCountrySelectSupportedLanguages } from './models/supported-languages';
 import {
   NgxCountrySelectDefaultFormFieldAppearanceToken,
   NgxCountrySelectLangToken,
 } from './tokens';
-import { Country } from './models/country';
+import { Country } from './models';
 import { MatFormFieldAppearance } from '@angular/material/form-field';
+import {ThemePalette} from "@angular/material/core";
 
 @Component({
   selector: 'ngx-country-select',
   templateUrl: './ngx-country-select.component.html',
-  styles: ``,
+  styles: `
+
+  `,
 })
 export class NgxCountrySelectComponent
   implements OnInit, OnChanges, ControlValueAccessor
@@ -40,6 +36,7 @@ export class NgxCountrySelectComponent
    * Inputs
    */
   appearance = input<MatFormFieldAppearance | undefined>();
+  color = input<ThemePalette>('primary');
   label = input<string>();
   placeHolder = input('Select a Country');
   required = input<boolean>(false);
