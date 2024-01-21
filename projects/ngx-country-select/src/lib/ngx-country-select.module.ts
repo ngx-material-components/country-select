@@ -1,5 +1,5 @@
 import {ModuleWithProviders, NgModule} from "@angular/core";
-import {CommonModule} from "@angular/common";
+import {CommonModule, JsonPipe} from "@angular/common";
 import {MatInputModule} from "@angular/material/input";
 import {MatFormFieldAppearance, MatFormFieldModule} from "@angular/material/form-field";
 import {NgxCountrySelectComponent} from "./ngx-country-select.component";
@@ -7,6 +7,7 @@ import {NgxCountrySelectDefaultFormFieldAppearanceToken, NgxCountrySelectLangTok
 import {MatAutocompleteModule} from "@angular/material/autocomplete";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {NgxCountrySelectSupportedLanguages} from "./models";
+import {MatIcon} from "@angular/material/icon";
 
 interface ForRootParams {
   defaultLanguage: NgxCountrySelectSupportedLanguages;
@@ -16,12 +17,11 @@ interface ForRootParams {
 @NgModule({
   declarations: [NgxCountrySelectComponent],
   imports: [
-    CommonModule,
     FormsModule,
     ReactiveFormsModule,
     MatInputModule,
     MatAutocompleteModule,
-    MatFormFieldModule
+    MatFormFieldModule,
   ],
   providers: [],
   exports: [

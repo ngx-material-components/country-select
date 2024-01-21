@@ -2,17 +2,18 @@
 
 <main>
   <section>
-
     <div class="mockup-browser border bg-base-200">
       <div class="mockup-browser-toolbar">
         <div class="input !bg-base-300">https://your-site.com</div>
       </div>
+
       <div class="flex justify-center px-4 py-16 bg-base-100">
         <ngx-country-select
-          [color]="optionsForm.controls.color.value"
-          [appearance]="optionsForm.controls.appearance.value"
-          [language]="optionsForm.controls.language.value"
           [label]="'Select a Country'"
+          [placeHolder]="optionsForm.controls.placeHolder.value"
+          [appearance]="optionsForm.controls.appearance.value"
+          [color]="optionsForm.controls.color.value"
+          [language]="optionsForm.controls.language.value"
           [required]="optionsForm.controls.required.value"
           [disabled]="optionsForm.controls.disabled.value"
         />
@@ -66,11 +67,11 @@
         </mat-select>
       </mat-form-field>
 
-      <mat-checkbox formControlName="required" aria-label="Required">
+      <mat-checkbox color="primary" formControlName="required" aria-label="Required">
         Required
       </mat-checkbox>
 
-      <mat-checkbox formControlName="disabled" aria-label="Disabled">
+      <mat-checkbox color="primary" formControlName="disabled" aria-label="Disabled">
         Disabled
       </mat-checkbox>
     </form>

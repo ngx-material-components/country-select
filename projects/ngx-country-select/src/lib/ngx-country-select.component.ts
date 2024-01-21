@@ -6,7 +6,7 @@ import {
   OnChanges,
   OnInit,
   SimpleChanges,
-  effect,
+  effect, signal,
 } from '@angular/core';
 import {
   ControlContainer,
@@ -18,20 +18,20 @@ import {
   NgxCountrySelectDefaultFormFieldAppearanceToken,
   NgxCountrySelectLangToken,
 } from './tokens';
-import { Country } from './models';
-import { MatFormFieldAppearance } from '@angular/material/form-field';
+import {Country} from './models';
+import {MatFormFieldAppearance} from '@angular/material/form-field';
 import {ThemePalette} from "@angular/material/core";
+import {MatAutocompleteSelectedEvent} from "@angular/material/autocomplete";
+import {takeUntilDestroyed} from "@angular/core/rxjs-interop";
+import {debounceTime, distinctUntilChanged} from "rxjs";
 
 @Component({
   selector: 'ngx-country-select',
   templateUrl: './ngx-country-select.component.html',
-  styles: `
-
-  `,
+  styles: ``,
 })
 export class NgxCountrySelectComponent
-  implements OnInit, OnChanges, ControlValueAccessor
-{
+  implements OnInit, OnChanges, ControlValueAccessor {
   /**
    * Inputs
    */
@@ -44,10 +44,10 @@ export class NgxCountrySelectComponent
   language = input<string | undefined>();
 
   countries: Country[] = [];
+  filteredCountryOptions = signal<Country[]>([]);
 
   _formControl = new FormControl(
-    { value: '', disabled: false },
-    this.required() ? [Validators.required] : []
+    {value: '', disabled: false},
   );
 
   constructor(
@@ -56,27 +56,69 @@ export class NgxCountrySelectComponent
     public appearanceToken?: MatFormFieldAppearance // @Optional() // @Host() // @SkipSelf() // private controlContainer: ControlContainer, // private cdRef: ChangeDetectorRef
   ) {
     effect(() => {
-      if (this.language()) {
-        this.loadCountries();
+      if (this.required()) {
+        this._formControl.addValidators(Validators.required)
+      } else {
+        this._formControl.removeValidators(Validators.required);
       }
     });
+
+    effect(() => {
+      if (this.disabled()) {
+        this._formControl.disable();
+      } else {
+        this._formControl.enable();
+      }
+    });
+
+    effect(() => {
+      if (this.language()) {
+        void this.loadCountries();
+      }
+    });
+
+    this._formControl.valueChanges.pipe(
+      takeUntilDestroyed(),
+      distinctUntilChanged(),
+      debounceTime(200)
+    ).subscribe(
+      val => {
+        if (!val) return;
+
+        if (val === '') {
+          this.filteredCountryOptions.set(
+            this.countries
+          );
+        }
+
+        this.filteredCountryOptions.set(
+          this.countries.filter(c => c.name.toLowerCase().indexOf(val.toLowerCase()) !== -1)
+        );
+      })
   }
 
   ngOnInit(): void {
     void this.loadCountries();
   }
 
-  ngOnChanges(changes: SimpleChanges): void {}
+  ngOnChanges(changes: SimpleChanges): void {
+  }
 
-  registerOnChange(fn: any): void {}
+  registerOnChange(fn: any): void {
+  }
 
-  registerOnTouched(fn: any): void {}
+  registerOnTouched(fn: any): void {
+  }
 
-  writeValue(obj: any): void {}
+  writeValue(obj: any): void {
+  }
 
 
   private async loadCountries(): Promise<void> {
     this.countries = await this.importCountries();
+    this.filteredCountryOptions.set(
+      this.countries
+    )
   }
 
   private async importCountries() {
@@ -132,5 +174,9 @@ export class NgxCountrySelectComponent
         const result_16 = await import('./i18n/en');
         return result_16.COUNTRIES_DB;
     }
+  }
+
+  onOptionsSelected($event: MatAutocompleteSelectedEvent) {
+
   }
 }

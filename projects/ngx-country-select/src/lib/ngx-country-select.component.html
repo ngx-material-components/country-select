@@ -2,20 +2,31 @@
   <mat-label>{{ label() }}</mat-label>
   <input
     autocomplete="country"
+    [placeholder]="placeHolder()"
     aria-label="Select a Country"
     [required]="required()"
-    [disabled]="disabled()"
     type="text"
     matInput
+    [matAutocomplete]="countryAutocomplete"
+    [formControl]="_formControl"
   />
-</mat-form-field>
+  <mat-autocomplete
+    #countryAutocomplete="matAutocomplete"
+    (optionSelected)="onOptionsSelected($event)"
+  >
+    @for (country of filteredCountryOptions(); track country.alpha3Code) {
 
-<details>
-  <summary>Country list</summary>
-  <div>
-    <pre>
-  {{ countries | json }}
-</pre
-    >
-  </div>
-</details>
+      <mat-option [value]="country.name">
+        <div class="d-flex">
+<!--          <mat-icon [svgIcon]="country?.alpha2Code?.toLowerCase()"></mat-icon>-->
+          <span class="country-list-item" [title]="country.name">
+            {{
+              country.name
+            }}
+          </span>
+        </div>
+      </mat-option>
+
+    }
+  </mat-autocomplete>
+</mat-form-field>

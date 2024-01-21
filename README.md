@@ -1,11 +1,11 @@
 # NgxCountrySelect
 
-Angular Material component that allow users to select a country or nationality with an autocomplete feature
+A signal based, Angular Material component for selecting a country via autocomplete.
 
 [![license](https://img.shields.io/github/license/ngx-material-components/country-select.svg?style=flat-square)](https://github.com/ngx-material-components/country-select/blob/master/LICENSE)
-
 ![GitHub issues](https://img.shields.io/github/issues/ngx-material-components/country-select.svg?style=flat-square)
 
+---
 
 ## Table of Contents
 - [Demo](#demo)
@@ -15,9 +15,10 @@ Angular Material component that allow users to select a country or nationality w
 - [API](#api)
 - [Usage](#usage)
 - [Run Demo App Locally](#run-demo-app-locally)
-- [Other Angular Libraries](#other-angular-libraries)
 - [Support](#support)
 - [License](#license)
+
+## Installation
 
 
 ## License

@@ -5,6 +5,7 @@ import {routes} from './app.routes';
 import {provideClientHydration} from '@angular/platform-browser';
 import {provideAnimations} from '@angular/platform-browser/animations';
 import {NgxCountrySelectModule} from "../../projects/ngx-country-select/src/lib/ngx-country-select.module";
+import {provideMarkdown} from "ngx-markdown";
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -17,5 +18,6 @@ export const appConfig: ApplicationConfig = {
         defaultFormFieldAppearance: "fill"
       }),
     ]),
+    provideMarkdown(),
   ]
 };
